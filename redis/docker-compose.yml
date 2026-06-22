@@ -1,0 +1,19 @@
+services:
+  redis_ekos:
+    image: redis:alpine
+    container_name: redis_exaudie_container
+    ports:
+      - "6389:6379"
+    restart: unless-stopped
+    volumes:
+      - exaudie_volume:/redis_data
+    command: redis-server --requirepass your_strong_password --appendonly yes
+    networks:
+      - exaudie_network
+
+networks:
+  exaudie_network:
+
+volumes:
+  exaudie_volume:
+    driver: local

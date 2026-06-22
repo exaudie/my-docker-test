@@ -1,0 +1,3 @@
+user default off
+user admin on >PasswordSuper123 ~* &* +@all
+user myapp_user on >MySecretPassword123 +@read +@write
